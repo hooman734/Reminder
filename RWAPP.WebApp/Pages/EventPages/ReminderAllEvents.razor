@@ -1,9 +1,17 @@
 @page "/Reminder-all-events"
-
-
 @inject IViewAllEventsByNameUseCase ViewAllEventsByNameUseCase
 
 <h3>Reminder All Events</h3>
+
+<br />
+
+<div class="input-group mb-3">
+    <input @bind="_name" @onfocusout="OnSearch" type="text" class="form-control" placeholder="Event's name" aria-label="Recipient's username" aria-describedby="basic-addon2">
+    <div class="input-group-append">
+        <button class="btn btn-success" type="button" @onclick="OnSearch">Search!</button>
+    </div>
+</div>
+
 <br />
 
 <div class="container-fluid">
@@ -16,11 +24,20 @@
 </div>
 
 @code {
+    
+    private string _name  = string.Empty;
+    
     private List<Event>? _events;
     
     protected override async Task OnInitializedAsync()
     {
-        _events = (await ViewAllEventsByNameUseCase.ExecuteAsync("")).ToList();
+        _events = (await ViewAllEventsByNameUseCase.ExecuteAsync(_name)).ToList();
     }
+    
 
+    private async Task OnSearch()
+    {
+        _events = (await ViewAllEventsByNameUseCase.ExecuteAsync(_name)).ToList();
+    }
+    
 }
