@@ -12,10 +12,10 @@ public class Repository : IRepository
     {
         _data = new()
         {
-            new Event() {Name = "Study", Description = "Do your homeworks by practicing on some projects", Link = "https://google.com", DueDate = DateTime.Now.ToString(CultureInfo.InvariantCulture)},
-            new Event() {Name = "meeting", Description = "enjoy your meeting with your colleagues and discus about the blockages", Link = "https://yahoo.com", DueDate = DateTime.Now.ToString(CultureInfo.InvariantCulture)},
-            new Event() {Name = "shop", Description = "buy groceries from the nearby supermarket", Link = "https://msn.com", DueDate = DateTime.Now.ToString(CultureInfo.InvariantCulture)},
-            new Event() {Name = "jogging", Description = "walk in a daily routine which helps you to keep your body fit", Link = "https://yahoo.com", DueDate = DateTime.Now.ToString(CultureInfo.InvariantCulture)},
+            new Event() {Name = "Study", Description = "Do your homeworks by practicing on some projects", Link = "https://google.com", DueDate = DateTime.Now},
+            new Event() {Name = "meeting", Description = "enjoy your meeting with your colleagues and discus about the blockages", Link = "https://yahoo.com", DueDate = DateTime.Now},
+            new Event() {Name = "shop", Description = "buy groceries from the nearby supermarket", Link = "https://msn.com", DueDate = DateTime.Now},
+            new Event() {Name = "jogging", Description = "walk in a daily routine which helps you to keep your body fit", Link = "https://yahoo.com", DueDate = DateTime.Now},
         };
     }
     
