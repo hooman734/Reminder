@@ -5,6 +5,10 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RWAPP.WebApp", "RWAPP.WebApp\RWAPP.WebApp.csproj", "{5607FB6E-9960-44AB-B584-9B1F7883D794}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RWAPP.CoreBusiness", "RWAPP.CoreBusiness\RWAPP.CoreBusiness.csproj", "{C0D327C1-774A-4EE6-AF7D-656D335CEFC9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RWAPP.UseCase", "RWAPP.UseCase\RWAPP.UseCase.csproj", "{E99174AF-E50D-4026-95DB-85AACC5DBA0B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +22,13 @@ Global
 		{5607FB6E-9960-44AB-B584-9B1F7883D794}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5607FB6E-9960-44AB-B584-9B1F7883D794}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5607FB6E-9960-44AB-B584-9B1F7883D794}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0D327C1-774A-4EE6-AF7D-656D335CEFC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0D327C1-774A-4EE6-AF7D-656D335CEFC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0D327C1-774A-4EE6-AF7D-656D335CEFC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0D327C1-774A-4EE6-AF7D-656D335CEFC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E99174AF-E50D-4026-95DB-85AACC5DBA0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E99174AF-E50D-4026-95DB-85AACC5DBA0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E99174AF-E50D-4026-95DB-85AACC5DBA0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E99174AF-E50D-4026-95DB-85AACC5DBA0B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
