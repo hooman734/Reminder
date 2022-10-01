@@ -1,0 +1,26 @@
+@page "/Reminder-all-events"
+
+
+@inject IViewAllEventsByNameUseCase ViewAllEventsByNameUseCase
+
+<h3>Reminder All Events</h3>
+<br />
+
+<div class="container-fluid">
+    <div class="d-flex flex-wrap">
+         @foreach (var e in _events!)
+            {
+                <EventCard E=@e/>
+            }
+    </div>
+</div>
+
+@code {
+    private List<Event>? _events;
+    
+    protected override async Task OnInitializedAsync()
+    {
+        _events = (await ViewAllEventsByNameUseCase.ExecuteAsync("")).ToList();
+    }
+
+}

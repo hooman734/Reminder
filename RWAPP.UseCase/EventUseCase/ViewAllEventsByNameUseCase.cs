@@ -1,9 +1,10 @@
 using RWAPP.CoreBusiness;
+using RWAPP.UseCase.EventUseCase.Interface;
 using RWAPP.UseCase.PluginInterface;
 
 namespace RWAPP.UseCase.EventUseCase;
 
-public class ViewAllEventsByNameUseCase
+public class ViewAllEventsByNameUseCase : IViewAllEventsByNameUseCase
 {
     private readonly IRepository _repository;
 

@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RWAPP.CoreBusiness", "RWAPP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RWAPP.UseCase", "RWAPP.UseCase\RWAPP.UseCase.csproj", "{E99174AF-E50D-4026-95DB-85AACC5DBA0B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RWAPP.Interface", "RWAPP.Interface", "{19BF6C68-0959-495B-B395-987AC343986D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RWAPP.Interface.InMemory", "RWAPP.Interface\RWAPP.Interface.InMemory\RWAPP.Interface.InMemory.csproj", "{A3FAAF1E-D38D-4056-A765-7456017B8588}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +34,12 @@ Global
 		{E99174AF-E50D-4026-95DB-85AACC5DBA0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E99174AF-E50D-4026-95DB-85AACC5DBA0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E99174AF-E50D-4026-95DB-85AACC5DBA0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3FAAF1E-D38D-4056-A765-7456017B8588}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3FAAF1E-D38D-4056-A765-7456017B8588}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3FAAF1E-D38D-4056-A765-7456017B8588}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3FAAF1E-D38D-4056-A765-7456017B8588}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A3FAAF1E-D38D-4056-A765-7456017B8588} = {19BF6C68-0959-495B-B395-987AC343986D}
 	EndGlobalSection
 EndGlobal
