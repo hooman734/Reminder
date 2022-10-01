@@ -13,6 +13,7 @@ builder.RootComponents.Add<HeadOutlet>("head::after");
 // Add Services
 builder.Services.AddSingleton<IRepository, Repository>();
 builder.Services.AddTransient<IViewAllEventsByNameUseCase, ViewAllEventsByNameUseCase>();
+builder.Services.AddTransient<IAddNewEventUseCase, AddNewEventUseCase>();
     
     
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
