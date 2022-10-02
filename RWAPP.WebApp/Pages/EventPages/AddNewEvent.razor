@@ -5,6 +5,15 @@
 @inject IAddNewEventUseCase AddNewEventUseCase
 
 <h3>Add New Event</h3>
+@if (_invalidDueDate)
+{
+    <div class="container-fluid">
+        <div class="alert alert-danger" role="alert">
+            The Due Date (<strong>@_event.DueDate</strong>) Must Be Set To The Future Not To The Past!
+        </div>
+    </div>
+}
+
 <br />
 
 <div class="container-fluid col-7">
@@ -42,12 +51,21 @@
 
 @code {
 
-    private Event _event = new();
+    
+    private bool _invalidDueDate  = false;
+    private readonly Event _event = new();
 
     private async Task SaveNewEvent()
     {
-        await AddNewEventUseCase.ExecuteAsync(_event);
-        NavigationManager.NavigateTo("/Reminder-all-events");
+        if (_event.DueDate < DateTime.Today)
+        {
+            _invalidDueDate = true;
+        }
+        else
+        {
+                await AddNewEventUseCase.ExecuteAsync(_event);
+                NavigationManager.NavigateTo("/Reminder-all-events");
+        }
     }
 
     private void Cancel()
