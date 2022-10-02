@@ -17,7 +17,7 @@ public class Event
     public string Link { get; set; } = string.Empty;
     
     [Required]
-    [EnumDataType(typeof(DateTime), ErrorMessage = "Input must be in Date format")]
+    [DataType(DataType.Date, ErrorMessage = "Invalid date!")]
     public DateTime DueDate { get; set; } = DateTime.Today;
     public DateTime CreatedAt { get; } = DateTime.Now;
     
