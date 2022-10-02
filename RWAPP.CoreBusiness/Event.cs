@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.Data;
 
 namespace RWAPP.CoreBusiness;
 
@@ -9,14 +10,14 @@ public class Event
     [Required]
     public string Name { get; set; } = string.Empty;
     
-    [MaxLength(200, ErrorMessage = "Description lenght is bounded to 200 characters long!")]
+    [MaxLength(100, ErrorMessage = "Description lenght is bounded to 100 characters long!")]
     public string Description { get; set; } = string.Empty;
     
-    [DataType(DataType.Url, ErrorMessage = "The input is invalid URL!")]
+    [RegularExpression("^https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*)$", ErrorMessage = "The input is not a valid URL!")]
     public string Link { get; set; } = string.Empty;
     
     [Required]
-    [DataType(DataType.Date, ErrorMessage = "Input must be in Date format")]
+    [EnumDataType(typeof(DateTime), ErrorMessage = "Input must be in Date format")]
     public DateTime DueDate { get; set; } = DateTime.Today;
     public DateTime CreatedAt { get; } = DateTime.Now;
     
