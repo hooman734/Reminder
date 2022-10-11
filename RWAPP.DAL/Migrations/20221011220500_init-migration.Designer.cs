@@ -11,7 +11,7 @@ using RWAPP.DAL;
 namespace RWAPP.DAL.Migrations
 {
     [DbContext(typeof(EventContext))]
-    [Migration("20221011192021_init-migration")]
+    [Migration("20221011220500_init-migration")]
     partial class initmigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

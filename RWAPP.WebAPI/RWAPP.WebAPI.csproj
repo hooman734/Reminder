@@ -7,7 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.10" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RWAPP.DAL\RWAPP.DAL.csproj" />
+    <ProjectReference Include="..\RWAPP.Interface\RWAPP.Interface.Sqlite\RWAPP.Interface.Sqlite.csproj" />
+    <ProjectReference Include="..\RWAPP.UseCase\RWAPP.UseCase.csproj" />
   </ItemGroup>
 
 </Project>

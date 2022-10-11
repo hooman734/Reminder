@@ -1,9 +1,20 @@
+using RWAPP.CoreBusiness;
+using RWAPP.DAL;
+using RWAPP.Interface.Sqlite;
+using RWAPP.UseCase.EventUseCase;
+using RWAPP.UseCase.EventUseCase.Interface;
+using RWAPP.UseCase.PluginInterface;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddDbContext<EventContext>();
+builder.Services.AddScoped<IRepository, Repository>();
+builder.Services.AddTransient<IAddNewEventUseCase, AddNewEventUseCase>();
+builder.Services.AddTransient<IViewAllEventsByNameUseCase, ViewAllEventsByNameUseCase>();
 
 var app = builder.Build();
 
@@ -16,28 +27,16 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-var summaries = new[]
+app.MapGet("/api/v1/events", async (IViewAllEventsByNameUseCase viewAllUseCase) =>
 {
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
+    IEnumerable<Event> events = await viewAllUseCase.ExecuteAsync("");
+    return Results.Ok(events);
+});
 
-app.MapGet("/weatherforecast", () =>
+app.MapPost("/api/v1/events", async (IAddNewEventUseCase addNewUseCase , Event e) =>
 {
-    var forecast =  Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateTime.Now.AddDays(index),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
-})
-.WithName("GetWeatherForecast");
+    await addNewUseCase.ExecuteAsync(e);
+});
 
 app.Run();
 
-record WeatherForecast(DateTime Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}
