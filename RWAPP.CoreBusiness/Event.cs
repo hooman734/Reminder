@@ -3,8 +3,9 @@ using System.Data;
 
 namespace RWAPP.CoreBusiness;
 
-public class Event
+public record Event
 {
+    [Key]
     public Guid EventId { get; init; } = Guid.NewGuid();
     
     [Required]
@@ -21,4 +22,6 @@ public class Event
     public DateTime DueDate { get; set; } = DateTime.Today;
     public DateTime CreatedAt { get; } = DateTime.Now;
     
+    [Required]
+    public bool IsDone { get; set; }
 }
